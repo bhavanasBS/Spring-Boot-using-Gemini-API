@@ -13,6 +13,10 @@ public class EmailGenratorController {
 
     private final EmailGeneratorService emailGeneratorService;
 
+    @GetMapping("/")
+    public String home() {
+        return "✅ Email Writer Backend is running successfully!";
+    }
     @PostMapping("/generate")
     public ResponseEntity<String> GenrateEmail(@RequestBody EmailRequest emailRequest) {
         String response=emailGeneratorService.generateEmailReply(emailRequest);
